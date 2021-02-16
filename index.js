@@ -1,6 +1,7 @@
 const express = require ("express");
 const app = express();
 const bodyParser = require ("body-parser")
+const connection = require("./database/database")
 
 
 
@@ -12,16 +13,17 @@ app.set("view engine", "ejs");
 app.use(express.static("public"))
 
 //BODY-PARSER - TORNANDO POSSÍVEL TRABALHAR COM FORMULÁRIOS
-app.use(bodyParser.urlencoded({extends: false}));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-
-
-
-
-
-
-
+//DATABASE
+connection
+    .authenticate()
+    .then(()=>{
+        console.log("CONECTADO AO BANCO DE DADOS");
+    }).catch((error) =>{
+        console.log(error);
+    })
 
 
 
