@@ -4,8 +4,8 @@
   "description": "Blog pessoal do Elias Fernandes",
   "main": "index.js",
   "scripts": {
- 
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js -e ejs,js,css,html,jpg,png,scss",
+     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",

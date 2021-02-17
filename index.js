@@ -6,6 +6,9 @@ const reaload = require("reload");
 const categController = require("./categories/categoriesController")
 const articController = require("./articles/articlesController")
 
+const article = require("./articles/article");
+const category = require ("./categories/category");
+
 //VIEW ENGINE
 app.set("view engine", "ejs");
 
