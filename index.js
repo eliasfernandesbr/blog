@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 connection
   .authenticate()
   .then(() => {
-    console.log("CONECTADO AO BANCO DE DADOS");
+    console.log("> CONECTADO AO BANCO DE DADOS mySql <");
   })
   .catch((error) => {
     console.log(error);
@@ -41,6 +41,6 @@ app.get("/", (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log("MEU SERVIDOR ESTÁ RODANDO NA PORTA 3000");
+  console.log("MEU SERVIDOR ESTÁ RODANDO NA PORTA [3000]");
 });
 reaload(app);
