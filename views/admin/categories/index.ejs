@@ -1,8 +1,10 @@
-<%- include ('../../partials/header.ejs'); %> <%- include
-('../../partials/navbar.ejs'); %>
+<%- include ('../../partials/header.ejs'); %> 
+<%- include('../../partials/navbar.ejs'); %>
+
 <div class="container">
   <hr />
   <h2>Categorias</h2>
+  <a class="btnNCat btn btn-success" href="/admin/categories/new">Criar nova categoria</a>
   <hr />
   <table class="table">
     <thead>
@@ -20,7 +22,18 @@
         <th><%= category.id %></th>
         <th><%=category.title %></th>
         <th><%=category.slug %></th>
-        <th></th>
+        <th>
+          <button class="btnEdit btn btn-warnig">Editar</button>
+
+          <form method="POST" action="/categories/delete" style="display: inline;">
+            <input type="hidden" name="id" value="<%= category.id %>">
+            <button class="btnDanger btn btn-danger">Deletar</button>
+          </form>
+          
+
+
+
+        </th>
       </tr>
 
       <% })%>
